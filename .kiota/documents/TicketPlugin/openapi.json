@@ -1,0 +1,147 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Ticket APIs",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://ticketapi-net8.azurewebsites.net/api"
+    }
+  ],
+  "paths": {
+    "/tickets": {
+      "post": {
+        "description": "Create a new ticket",
+        "operationId": "CreateTicket",
+        "requestBody": {
+          "description": "The ticket to create",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/postTicket"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/myTicketTable"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "description": "Get the tickets with a given keyword in the title",
+        "operationId": "GetTickets",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "description": "The search keyword",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ticket"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "eTag": {
+        "type": "object"
+      },
+      "myTicketTable": {
+        "type": "object",
+        "properties": {
+          "partitionKey": {
+            "type": "string"
+          },
+          "rowKey": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "eTag": {
+            "$ref": "#/components/schemas/eTag"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "assignedTo": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          }
+        }
+      },
+      "postTicket": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "assignedTo": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          }
+        }
+      },
+      "ticket": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "assignedTo": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

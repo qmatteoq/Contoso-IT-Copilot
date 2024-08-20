@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/vDevPreview/MicrosoftTeams.schema.json",
+  "manifestVersion": "devPreview",
+  "version": "1.0.0",
+  "id": "${{TEAMS_APP_ID}}",
+  "developer": {
+    "name": "Teams App, Inc.",
+    "websiteUrl": "https://www.example.com",
+    "privacyUrl": "https://www.example.com/privacy",
+    "termsOfUseUrl": "https://www.example.com/termofuse"
+  },
+  "packageName": "com.microsoft.teams.extension",
+  "name": {
+    "short": "Contoso IT Copilot",
+    "full": "Contoso IT Copilot"
+  },
+  "description": {
+    "short": "Short description for ITCopilot",
+    "full": "Full description for ITCopilot"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#FFFFFF",
+  "copilotExtensions": {
+    "declarativeCopilots": [
+      {
+        "id": "declarativeCopilot",
+        "file": "declarativeCopilot.json"
+      }
+    ]
+  },
+  "composeExtensions": [],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": []
+}

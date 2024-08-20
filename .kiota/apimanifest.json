@@ -1,0 +1,22 @@
+{
+  "applicationName": "application",
+  "apiDependencies": {
+    "TicketPlugin": {
+      "apiDescriptionUrl": "https://ticketapi-net8.azurewebsites.net/api/swagger.json",
+      "apiDeploymentBaseUrl": "https://ticketapi-net8.azurewebsites.net/api/",
+      "requests": [
+        {
+          "method": "POST",
+          "uriTemplate": "tickets"
+        },
+        {
+          "method": "GET",
+          "uriTemplate": "tickets"
+        }
+      ],
+      "extensions": {
+        "x-ms-kiota-hash": "D2BB502708A2EB23868A7FF452062057A6EC8ADDD702205D72937D8EB0FA5B71"
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "clients": {},
+  "plugins": {
+    "TicketPlugin": {
+      "types": [
+        "APIPlugin"
+      ],
+      "descriptionLocation": "https://ticketapi-net8.azurewebsites.net/api/swagger.json",
+      "includePatterns": [],
+      "excludePatterns": [],
+      "outputPath": "./appPackage"
+    }
+  }
+}
