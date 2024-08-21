@@ -34,13 +34,21 @@
     },
     "/tickets": {
       "get": {
-        "description": "Get the tickets with a given keyword in the title",
+        "description": "Get the tickets with a given keyword in the title or assigned to a specific person",
         "operationId": "GetTickets",
         "parameters": [
           {
             "name": "search",
             "in": "query",
             "description": "The search keyword",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assignedTo",
+            "in": "query",
+            "description": "The person assigned to the ticket",
             "schema": {
               "type": "string"
             }
@@ -110,6 +118,11 @@
           },
           "severity": {
             "type": "string"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         }
       },

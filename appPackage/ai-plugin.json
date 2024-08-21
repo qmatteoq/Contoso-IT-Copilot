@@ -11,7 +11,7 @@
         },
         {
             "name": "GetTickets",
-            "description": "Get the tickets with a given keyword in the title",
+            "description": "Get the tickets with a given keyword in the title or assigned to a specific person",
             "capabilities": {
                 "response_semantics": {
                     "data_path": "$",
