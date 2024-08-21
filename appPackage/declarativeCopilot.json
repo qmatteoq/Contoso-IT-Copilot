@@ -19,8 +19,12 @@
             "text": "How can I use company resources on my mobile device?"
         },
         {
-            "title": "Getting Help",
+            "title": "Issues with my work computer",
             "text": "Which are the steps to follow if my PC doesn't work?"
+        },
+        {
+            "title": "Printing",
+            "text": "How can I print from my mobile device?"
         }
     ],
     "actions": [
