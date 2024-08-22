@@ -11,7 +11,7 @@
         },
         {
             "name": "GetTickets",
-            "description": "Get the tickets with a given keyword in the title or assigned to a specific person",
+            "description": "Get the tickets with a given keyword in the title, assigned to a specific person or in a specific status",
             "capabilities": {
                 "response_semantics": {
                     "data_path": "$",
@@ -30,7 +30,7 @@
                                 "items": [
                                     {
                                         "type": "TextBlock",
-                                        "text": "id: ${if(id, id, 'N/A')}",
+                                        "text": "rowKey: ${if(rowKey, rowKey, 'N/A')}",
                                         "wrap": true
                                     },
                                     {
@@ -51,6 +51,11 @@
                                     {
                                         "type": "TextBlock",
                                         "text": "severity: ${if(severity, severity, 'N/A')}",
+                                        "wrap": true
+                                    },
+                                    {
+                                        "type": "TextBlock",
+                                        "text": "status: ${if(status, status, 'N/A')}",
                                         "wrap": true
                                     }
                                 ]
@@ -77,11 +82,6 @@
                         "body": [
                             {
                                 "type": "TextBlock",
-                                "text": "partitionKey: ${if(partitionKey, partitionKey, 'N/A')}",
-                                "wrap": true
-                            },
-                            {
-                                "type": "TextBlock",
                                 "text": "rowKey: ${if(rowKey, rowKey, 'N/A')}",
                                 "wrap": true
                             },
@@ -98,6 +98,16 @@
                             {
                                 "type": "TextBlock",
                                 "text": "description: ${if(description, description, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "severity: ${if(severity, severity, 'N/A')}",
+                                "wrap": true
+                            },
+                            {
+                                "type": "TextBlock",
+                                "text": "status: ${if(status, status, 'N/A')}",
                                 "wrap": true
                             }
                         ]
